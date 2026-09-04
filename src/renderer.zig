@@ -955,7 +955,15 @@ pub const MeshSelection = struct { // MARK: MeshSelection
 						break;
 					}
 				}
+			} else {
+				const isFog = item == .baseItem and item.baseItem.hasTag(.fog);
+				if (isFog) {
+					selectedBlockPos = voxelPos;
+					selectionMin = @as(Vec3f, @splat(0.0));
+					selectionMax = @as(Vec3f, @splat(1.0));
+				}
 			}
+
 			posBeforeBlock = voxelPos;
 			if (tMax[0] < tMax[1]) {
 				if (tMax[0] < tMax[2]) {

@@ -9,5 +9,9 @@
 	.replaceable = true,
 	.collide = false,
 
+	.item = .{
+		.tags = .{.fog},
+	},
+
 	.model = "cubyz:cube",
 }
